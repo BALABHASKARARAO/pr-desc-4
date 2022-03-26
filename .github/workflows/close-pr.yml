@@ -2,22 +2,16 @@ name: close-pr
 on:
   pull_request:
     types:
-      #- labeled
-      #- unlabeled
-      #- synchronize
       - opened
-      #- edited
-      #- ready_for_review
-      #- reopened
+   
 jobs:
   check-description:
     runs-on: ubuntu-latest
     steps:
-	  - uses: actions/checkout@v1
-      - uses: nouzbe/check-pull-request-description@v1.11
-  close-pr-description-failed:
-    steps:
-	  - name : close-pr-of-specific
-	    #if: 
-	    run: |
-	      echo "bala, job sucess"
+	  - name: pr-desc-test
+	      uses: actions/checkout@v1
+          uses: nouzbe/check-pull-request-description@v1.11
+		  
+	  - name: close-pr-description-failed
+	    id :vars
+	    run: echo "bala, job sucess"
