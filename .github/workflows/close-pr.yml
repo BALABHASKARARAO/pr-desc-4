@@ -9,12 +9,15 @@ jobs:
     steps:
       - name: Add reaction
         id: check-description
-        continue-on-error: true
         #uses: actions/checkout@v1
         uses: nouzbe/check-pull-request-description@v1.11
-        
-
+        continue-on-error: true
+  close:
+    runs-on: ubuntu-lastest
+    steps: 
       - name: Create URL to the run output
-        if: steps.check-description.outputs.status == 'failure'
+        needs: [helloWorld]
+        if: always() && (needs.helloWorld.result == 'failure')
+        #if: steps.check-description.outputs.status == 'failure'
         id: vars
         run: echo "bala"
