@@ -9,9 +9,10 @@ jobs:
     steps:
       - name: Add reaction
         id: check-description
+        continue-on-error: true
         #uses: actions/checkout@v1
         uses: nouzbe/check-pull-request-description@v1.11
-        continue-on-error: true
+        
 
       - name: Create URL to the run output
         if: steps.check-description.outputs.status == 'failure'
