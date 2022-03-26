@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Add reaction
-        uses: actions/checkout@v1
-        uses: nouzbe/check-pull-request-description@v1.11
+          - uses: actions/checkout@v1
+          - uses: nouzbe/check-pull-request-description@v1.11
 
       - name: Create URL to the run output
         id: vars
