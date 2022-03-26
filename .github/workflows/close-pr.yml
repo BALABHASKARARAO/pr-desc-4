@@ -1,17 +1,16 @@
-name: close-pr
+name: Hello World Command
 on:
   pull_request:
     types:
       - opened
-   
 jobs:
-  check-description:
+  helloWorld:
     runs-on: ubuntu-latest
     steps:
-	  - name: pr-desc-test
-	      uses: actions/checkout@v1
-          uses: nouzbe/check-pull-request-description@v1.11
-		  
-	  - name: close-pr-description-failed
-	    id :vars
-	    run: echo "bala, job sucess"
+      - name: Add reaction
+        uses: actions/checkout@v1
+        uses: nouzbe/check-pull-request-description@v1.11
+
+      - name: Create URL to the run output
+        id: vars
+        run: echo "bala"
