@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: Create URL to the run output
-        needs: [helloWorld]
+        #needs: [helloWorld]
         if: ${{ always() && (needs.helloWorld.result=='failure') }}
         #if: always() && (needs.helloWorld.result == 'failure')
         #if: steps.check-description.outputs.status == 'failure'
