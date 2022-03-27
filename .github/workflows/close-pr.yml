@@ -11,7 +11,7 @@ jobs:
         id: check-description
         #uses: actions/checkout@v1
         uses: nouzbe/check-pull-request-description@v1.11
-        #continue-on-error: true
+        continue-on-error: true
   close:
     runs-on: ubuntu-latest
     steps: 
