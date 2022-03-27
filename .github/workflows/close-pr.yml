@@ -19,6 +19,7 @@ jobs:
       - name: Create URL to the run output
         #needs: [helloWorld]
         if: ${{ always() && (needs.helloWorld.result=='failure') }}
+        uses: actions/checkout@v1
         #if: always() && (needs.helloWorld.result == 'failure')
         #if: steps.check-description.outputs.status == 'failure'
         #id: vars
