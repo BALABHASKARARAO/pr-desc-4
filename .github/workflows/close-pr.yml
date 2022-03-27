@@ -13,7 +13,7 @@ jobs:
         uses: nouzbe/check-pull-request-description@v1.11
         continue-on-error: true
   close:
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
     steps: 
       - name: Create URL to the run output
         #needs: [helloWorld]
